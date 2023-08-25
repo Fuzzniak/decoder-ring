@@ -51,6 +51,15 @@ describe("substitution() submission tests written by Thinkful", () => {
 
       expect(actual).to.equal(expected);
     });
+
+    it("should ignore capitalization of letters", () => {
+      const message = "MESSAGE";
+      const alphabet = ".waeszrdxtfcygvuhbijnokmpl";
+      const actual = substitution(message, alphabet);
+      const expected = "ysii.rs";
+
+      expect(actual).to.equal(expected);
+    });
   });
 
   describe("decoding a message", () => {
