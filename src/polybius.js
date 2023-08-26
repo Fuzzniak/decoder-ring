@@ -31,12 +31,12 @@ const polybiusModule = (function () {
     } else {
       key = decodeKey;
       splitString = input.split(" ");
+      //don't allow an odd length input
       const isOdd = splitString.reduce((acc, array) => acc + array.length, 0) % 2;
       if(isOdd) {
         return false;
       }
       splitString = splitString.map(section => {
-        console.log('section on line 70: ', section)
         return section.split("").reduce((acc, char, index, collect) => {
           if(char === " ") {
             acc.push(" ");
