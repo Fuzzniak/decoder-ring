@@ -25,6 +25,7 @@ const polybiusModule = (function () {
     //make sure inputs are lowercase
     input = input.toLowerCase();
     let key = encodeKey;
+    //split down the input
     let splitString;
     if (encode){
       splitString = input.split("");
@@ -36,8 +37,10 @@ const polybiusModule = (function () {
       if(isOdd) {
         return false;
       }
+      //create a new array of the encoded/decoded message
       splitString = splitString.map(section => {
         return section.split("").reduce((acc, char, index, collect) => {
+          //make sure to keep spaces intact
           if(char === " ") {
             acc.push(" ");
           } else if(!(index % 2)) {
@@ -48,6 +51,7 @@ const polybiusModule = (function () {
       })
       .reduce((a, b) => a.concat(" ", b));
     }
+    //return the encoded/decoded message as a string
     return splitString.map(char => key[char] || " ").join("");
   }
   return {
