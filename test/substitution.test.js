@@ -38,9 +38,9 @@ describe("substitution", () => {
 
     it("should be able to use any kind of unique character", () => {
       const message = "message";
-      const alphabet = "!wae?zrdxtfcygvuhbijnokmpl";
+      const alphabet = ".waeszrdxtfcygvuhbijnokmpl";
       const actual = substitution(message, alphabet);
-      const expected = "y?ii!rs";
+      const expected = "ysii.rs";
 
       expect(actual).to.equal(expected);
 
@@ -69,8 +69,8 @@ describe("substitution", () => {
     });
 
     it("should be able to use any kind of unique character", () => {
-      const message = "y?ii!rs";
-      const alphabet = "!wae?zrdxtfcygvuhbijnokmpl";
+      const message = "ysii.rs";
+      const alphabet = ".waeszrdxtfcygvuhbijnokmpl";
       const actual = substitution(message, alphabet, false);
       const expected = "message";
 
@@ -80,7 +80,7 @@ describe("substitution", () => {
     it("should maintain spaces", () => {
       const message = "yp ysii.rs";
       const alphabet = ".waeszrdxtfcygvuhbijnokmpl";
-      const actual = substitution(message, alphabet);
+      const actual = substitution(message, alphabet, false);
       const expected = "my message";
 
       expect(actual).to.equal(expected);

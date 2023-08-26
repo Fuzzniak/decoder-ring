@@ -22,10 +22,10 @@ const polybiusModule = (function () {
   }
 
   function polybius(input, encode = true) {
-    //make sure inputs are lowercase
+    //make sure the input parameter is lowercase
     input = input.toLowerCase();
     let key = encodeKey;
-    //split down the input
+    //split the input parameter
     let splitString;
     if (encode){
       splitString = input.split("");
